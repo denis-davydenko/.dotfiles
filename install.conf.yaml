@@ -1,0 +1,21 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- create:
+    - ~/.config
+
+- link:
+    ~/.gitconfig: git/gitconfig
+    ~/.zshrc: zsh/.zshrc
+    ~/.config/karabiner: karabiner
+    ~/.editorconfig: .editorconfig
+    ~/.oh-my-zsh: oh-my-zsh/
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [./homebrew/install.sh, Installing homebew and essential utils]
+    - cd fonts && sh install.sh
+    - source osx/.macos

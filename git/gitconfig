@@ -1,0 +1,27 @@
+[user]
+	name = Denis Davydenko
+	email = iamstylle@gmail.com
+
+[core]
+	autocrlf = input
+	editor = /usr/bin/vim
+
+[alias]
+    l   = log --oneline --graph --decorate
+
+[color]
+	ui = auto
+
+[diff]
+tool = sublimerge
+
+[difftool "sublimerge"]
+cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
+
+[merge]
+tool = sublimerge
+
+[mergetool "sublimerge"]
+cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
+trustExitCode = false
+
