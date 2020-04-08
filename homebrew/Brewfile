@@ -1,6 +1,5 @@
 cask_args appdir: '/Applications'
 
-
 brew 'coreutils'
 brew 'findutils'
 brew 'autojump'
@@ -11,11 +10,6 @@ brew 'ffmpeg'
 brew 'node'
 brew 'nvm'
 
-# Installs Casks
-tap 'caskroom/cask'
-tap 'caskroom/versions'
-
-## Apps I use
 cask 'alfred'
 cask 'anki'
 cask 'cheatsheet'

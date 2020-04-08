@@ -1,4 +1,4 @@
-- defaults:
+- defaults: 
     link:
       relink: true
 
@@ -16,6 +16,9 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [./homebrew/install.sh, Installing homebew and essential utils]
+    - 
+      command: sh ./homebrew/install.sh
+      stdin: true
+      stdout: true
     - cd fonts && sh install.sh
     - source osx/.macos
