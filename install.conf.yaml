@@ -1,4 +1,4 @@
-- defaults: 
+- defaults:
     link:
       relink: true
 
@@ -16,9 +16,11 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - 
-      command: sh ./homebrew/install.sh
+    - command: sh ./homebrew/install.sh
       stdin: true
       stdout: true
     - cd fonts && sh install.sh
     - source osx/.macos
+
+- link:
+    ~/.dotfiles/zsh/themes/spaceship.zsh-theme: zsh/themes/spaceship-prompt/spaceship.zsh-theme
