@@ -36,6 +36,7 @@ plugins=(
   vi-mode
   zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-nvm
  )
 
 
