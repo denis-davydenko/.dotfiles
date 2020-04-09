@@ -33,6 +33,8 @@ plugins=(
   osx
   npm
   sublime
+  vi-mode
+  zsh-syntax-highlighting
  )
 
 
