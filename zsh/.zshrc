@@ -35,6 +35,7 @@ plugins=(
   sublime
   vi-mode
   zsh-syntax-highlighting
+  zsh-autosuggestions
  )
 
 
