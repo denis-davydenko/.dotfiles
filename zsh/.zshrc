@@ -12,6 +12,11 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
 
+#spaceship-prompt
+SPACESHIP_DOCKER_SHOW="false"
+SPACESHIP_NODE_SHOW="false"
+SPACESHIP_PACKAGE_SHOW="false"
+
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
@@ -44,3 +49,4 @@ source $ZSH/oh-my-zsh.sh
 
 #autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
