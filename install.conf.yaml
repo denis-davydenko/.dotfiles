@@ -13,6 +13,9 @@
     ~/.config/karabiner: karabiner
     ~/.editorconfig: .editorconfig
     ~/.oh-my-zsh: oh-my-zsh/
+    ~/.vim/colors/selenized.vim: vim/colors/selenized.vim
+    ~/.vim/coc-settings.json: vim/coc-settings.json
+    ~/.config/kitty/kitty.conf: kitty/kitty.conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

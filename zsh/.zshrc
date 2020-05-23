@@ -1,14 +1,16 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR='vim'
+export EDITOR="vim"
 export TERM_PROGRAM=iTerm.app
+export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/.dotfiles/zsh
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
+# vim
+export MYVIMRC="$HOME/.dotfiles/.vimrc"
+export VIMINIT="source $MYVIMRC"
+
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
 
@@ -17,13 +19,8 @@ SPACESHIP_DOCKER_SHOW="false"
 SPACESHIP_NODE_SHOW="false"
 SPACESHIP_PACKAGE_SHOW="false"
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -36,17 +33,28 @@ plugins=(
   dotenv
   git
   osx
-  npm
   sublime
-  vi-mode
   zsh-syntax-highlighting
   zsh-autosuggestions
   zsh-nvm
+  fzf
+  fzf-tab
  )
 
 
 source $ZSH/oh-my-zsh.sh
 
-#autojump
+# autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# bat
+alias cat="bat"
+export BAT_THEME="Solarized (light)"
+
+# exa
+alias ls="exa"
+alias lsa="exa -lahF"
+
+# fzf
+source ~/.dotfiles/zsh/fzf.sh
 
