@@ -6,6 +6,7 @@
 
 - create:
     - ~/.config
+    - ~/vim/colors
 
 - link:
     ~/.gitconfig: git/gitconfig
@@ -13,6 +14,7 @@
     ~/.config/karabiner: karabiner
     ~/.editorconfig: .editorconfig
     ~/.oh-my-zsh: oh-my-zsh/
+    ~/.vimrc: .vimrc
     ~/.vim/colors/selenized.vim: vim/colors/selenized.vim
     ~/.vim/coc-settings.json: vim/coc-settings.json
     ~/.config/kitty/kitty.conf: kitty/kitty.conf
