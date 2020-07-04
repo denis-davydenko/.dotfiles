@@ -35,11 +35,12 @@ set nobackup
 set nowritebackup
 set nocompatible " no vi support
 set nojoinspaces " no to double-spaces when joining lines
+set noshowmode " don't show current mode
 set number " show line numbers
 set re=0
-set relativenumber " show relative numbers
+" set relativenumber " show relative numbers
 set ruler
-set scrolloff=5 " number of screen lines to keep above and below cursor
+" set scrolloff=5 " number of screen lines to keep above and below cursor
 set shiftwidth=2 " number of spaces for each ident level
 set shortmess+=c " don't pass messages to |ins-completion-menu|
 set showtabline=2 " always show tabline
@@ -95,6 +96,7 @@ Plug 'mbbill/undotree' " for undo history visualization
 Plug 'tmsvg/pear-tree' " for brackets auto closing
 Plug 'mhinz/vim-grepper' " for searching
 Plug 'stefandtw/quickfix-reflector.vim' " running commands in quickfix window
+Plug 'https://github.com/itchyny/lightline.vim' " statusline plugin
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " intellisense engine
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
@@ -102,12 +104,14 @@ Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'amiralies/coc-flow', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tslint-plugin', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
+
 " finalize vim-plug.
 call plug#end()
 " }}}
 
 set background=dark
-colorscheme selenized
+colorscheme selenized_bw
 
 " MAPPINGS
 " move blocks in visual mode
@@ -136,6 +140,21 @@ nnoremap <leader>q :quit<CR>
 " source vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
+" lightline {{{
+let g:lightline = {
+  \ 'colorscheme': 'selenized_black',
+  \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead',
+    \   'cocstatus': 'coc#status'
+    \ },
+  \ }
+
+" }}}
+
 " undotree {{{
 let g:undotree_HighlightChangedWithSign = 0
 let g:undotree_WindowLayout = 4
@@ -143,7 +162,7 @@ nnoremap <Leader>u :UndotreeToggle<CR>
 " }}}
 
 
-" easy motion {{{
+" easy-motion {{{
 let g:EasyMotion_do_mapping = 0 " dont use default mapping
 let g:EasyMotion_smartcase = 1 " ignore case
 let g:EasyMotion_startofline = 0 " save cursor column when use easymoiton-(j|k)
@@ -165,13 +184,13 @@ let g:pear_tree_smart_closers = 1
 let g:pear_tree_smart_openers = 1
  " }}}
 
- " vim-auto-save {{{
-let g:auto_save        = 1
+" vim-auto-save {{{
+let g:auto_save = 1
 let g:auto_save_silent = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
- " }}}
+" }}}
 
- " vim-fugitive {{{
+" vim-fugitive {{{
 nnoremap <silent> <Leader>B :Gblame<CR>
 nnoremap <silent> <Leader>C :Gclog %<CR>
 nnoremap <silent> <Leader>G :Gstatus<CR>
@@ -226,11 +245,11 @@ xmap gs <Plug>(GrepperOperator)
 " }}}
 
 " netrw {{{
-let g:netrw_banner = 0 " hide banner
-let g:netrw_browse_split = 4 " open files in the previous window
-let g:netrw_winsize = 25
-let g:netrw_altv = 1
-nnoremap <silent> <leader>' :Vexplore<CR>
+" let g:netrw_banner = 0 " hide banner
+" let g:netrw_browse_split = 4 " open files in the previous window
+" let g:netrw_winsize = 25
+" let g:netrw_altv = 1
+" nnoremap <silent> <leader>' :Vexplore<CR>
 " }}}
 
 " coc.vim {{{
@@ -257,6 +276,9 @@ endfunction
 " use <c-space> to trigger completion.
 nmap <leader>. <Plug>(coc-codeaction)
 
+" highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
@@ -276,6 +298,17 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 " symbol renaming.
 nmap <leader>r <Plug>(coc-rename)
 
@@ -285,4 +318,28 @@ xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " prettier support
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" coc-explorer
+nmap <leader>' :CocCommand explorer<CR>
+
+" use auocmd to force lightline update.
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+
+" coc-diagnostics fix when easymotin is active
+let g:easymotion#is_active = 0
+
+function! EasyMotionCoc() abort
+  if EasyMotion#is_active()
+    let g:easymotion#is_active = 1
+    CocDisable
+  else
+    if g:easymotion#is_active == 1
+      let g:easymotion#is_active = 0
+      CocEnable
+    endif
+  endif
+endfunction
+
+autocmd TextChanged,CursorMoved * call EasyMotionCoc()
+
 " }}}
