@@ -16,6 +16,8 @@
 	<integer>1</integer>
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
+	<key>BadgeFontIsBold</key>
+	<true/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>AtomOneLight</key>
@@ -2505,98 +2507,100 @@ Split Vertically…</string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>496 377 799 617 0 0 1792 1120 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1792 1120 0 0 1792 1120 </string>
+	<string>-130 1166 2162 1348 -329 1120 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>228 102 730 500 0 0 1792 1120 </string>
+	<string>228 102 730 492 0 0 1792 1120 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>596 178 730 478 0 0 1792 1120 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<true/>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.27000000000000002</real>
+				<real>0.109</real>
 				<key>Green Component</key>
-				<real>0.223</real>
+				<real>0.109</real>
 				<key>Red Component</key>
-				<real>0.088200000000000001</real>
+				<real>0.109</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.24399999999999999</real>
+				<real>0.20999999999999999</real>
 				<key>Green Component</key>
-				<real>0.23599999999999999</real>
+				<real>0.191</real>
 				<key>Red Component</key>
-				<real>0.94499999999999995</real>
+				<real>0.88100000000000001</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.17999999999999999</real>
+				<real>0.17699999999999999</real>
 				<key>Green Component</key>
-				<real>0.746</real>
+				<real>0.74299999999999999</real>
 				<key>Red Component</key>
-				<real>0.47099999999999997</real>
+				<real>0.46700000000000003</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.14299999999999999</real>
+				<real>0.158</real>
 				<key>Green Component</key>
-				<real>0.70699999999999996</real>
+				<real>0.72599999999999998</real>
 				<key>Red Component</key>
-				<real>0.89300000000000002</real>
+				<real>0.91500000000000004</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
 				<key>Blue Component</key>
 				<real>1</real>
 				<key>Green Component</key>
-				<real>0.56699999999999995</real>
+				<real>0.53700000000000003</real>
 				<key>Red Component</key>
-				<real>0.29099999999999998</real>
+				<real>0.25900000000000001</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.76700000000000002</real>
+				<real>0.754</real>
 				<key>Green Component</key>
-				<real>0.41399999999999998</real>
+				<real>0.40200000000000002</real>
 				<key>Red Component</key>
-				<real>0.98299999999999998</real>
+				<real>0.96899999999999997</real>
 			</dict>
 			<key>Ansi 14 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.73099999999999998</real>
+				<real>0.74199999999999999</real>
 				<key>Green Component</key>
-				<real>0.81100000000000005</real>
+				<real>0.82299999999999995</real>
 				<key>Red Component</key>
-				<real>0.316</real>
+				<real>0.32600000000000001</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.81599999999999995</real>
+				<real>0.83899999999999997</real>
 				<key>Green Component</key>
-				<real>0.81499999999999995</real>
+				<real>0.83899999999999997</real>
 				<key>Red Component</key>
-				<real>0.751</real>
+				<real>0.83899999999999997</real>
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.13</real>
+				<real>0.112</real>
 				<key>Green Component</key>
-				<real>0.68000000000000005</real>
+				<real>0.65800000000000003</real>
 				<key>Red Component</key>
-				<real>0.41299999999999998</real>
+				<real>0.39400000000000002</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
@@ -2610,67 +2614,67 @@ Split Vertically…</string>
 			<key>Ansi 4 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.97199999999999998</real>
+				<real>0.91200000000000003</real>
 				<key>Green Component</key>
-				<real>0.50900000000000001</real>
+				<real>0.46400000000000002</real>
 				<key>Red Component</key>
-				<real>0.22900000000000001</real>
+				<real>0.17799999999999999</real>
 			</dict>
 			<key>Ansi 5 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.70099999999999996</real>
+				<real>0.67000000000000004</real>
 				<key>Green Component</key>
-				<real>0.35599999999999998</real>
+				<real>0.33000000000000002</real>
 				<key>Red Component</key>
-				<real>0.90800000000000003</real>
+				<real>0.872</real>
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.66600000000000004</real>
+				<real>0.65900000000000003</real>
 				<key>Green Component</key>
-				<real>0.74199999999999999</real>
+				<real>0.73399999999999999</real>
 				<key>Red Component</key>
-				<real>0.25900000000000001</real>
+				<real>0.252</real>
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.48699999999999999</real>
+				<real>0.38900000000000001</real>
 				<key>Green Component</key>
-				<real>0.46600000000000003</real>
+				<real>0.38900000000000001</real>
 				<key>Red Component</key>
-				<real>0.379</real>
+				<real>0.38900000000000001</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.34000000000000002</real>
+				<real>0.17499999999999999</real>
 				<key>Green Component</key>
-				<real>0.28899999999999998</real>
+				<real>0.17499999999999999</real>
 				<key>Red Component</key>
-				<real>0.14499999999999999</real>
+				<real>0.17499999999999999</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.28799999999999998</real>
+				<real>0.26500000000000001</real>
 				<key>Green Component</key>
-				<real>0.29299999999999998</real>
+				<real>0.26300000000000001</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.98299999999999998</real>
 			</dict>
 			<key>BM Growl</key>
 			<true/>
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.221</real>
+				<real>0.072400000000000006</real>
 				<key>Green Component</key>
-				<real>0.182</real>
+				<real>0.072400000000000006</real>
 				<key>Red Component</key>
-				<real>0.067400000000000002</real>
+				<real>0.072400000000000006</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -2696,11 +2700,11 @@ Split Vertically…</string>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.81599999999999995</real>
+				<real>0.83899999999999997</real>
 				<key>Green Component</key>
-				<real>0.81499999999999995</real>
+				<real>0.83899999999999997</real>
 				<key>Red Component</key>
-				<real>0.751</real>
+				<real>0.83899999999999997</real>
 			</dict>
 			<key>Brighten Bold Text</key>
 			<true/>
@@ -2715,11 +2719,11 @@ Split Vertically…</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.68300000000000005</real>
+				<real>0.66700000000000004</real>
 				<key>Green Component</key>
-				<real>0.68200000000000005</real>
+				<real>0.66700000000000004</real>
 				<key>Red Component</key>
-				<real>0.622</real>
+				<real>0.66700000000000004</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -2737,11 +2741,11 @@ Split Vertically…</string>
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.221</real>
+				<real>0.072400000000000006</real>
 				<key>Green Component</key>
-				<real>0.182</real>
+				<real>0.072400000000000006</real>
 				<key>Red Component</key>
-				<real>0.067400000000000002</real>
+				<real>0.072400000000000006</real>
 			</dict>
 			<key>Cursor Type</key>
 			<integer>2</integer>
@@ -2762,11 +2766,11 @@ Split Vertically…</string>
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.68300000000000005</real>
+				<real>0.66700000000000004</real>
 				<key>Green Component</key>
-				<real>0.68200000000000005</real>
+				<real>0.66700000000000004</real>
 				<key>Red Component</key>
-				<real>0.622</real>
+				<real>0.66700000000000004</real>
 			</dict>
 			<key>Guid</key>
 			<string>742BB751-FB4E-4BC1-85A6-67EC96714FF4</string>
@@ -2774,6 +2778,8 @@ Split Vertically…</string>
 			<real>1</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
+			<key>Initial Use Transparency</key>
+			<false/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -3077,18 +3083,22 @@ Split Vertically…</string>
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
+			<key>Minimum Contrast</key>
+			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>FiraCode-Regular 14</string>
+			<string>HackNerdFontComplete-Regular 13</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
-			<true/>
+			<false/>
 			<key>Normal Font</key>
-			<string>FiraCode-Retina 15</string>
+			<string>JetBrainsMono-Regular 14</string>
+			<key>Open Toolbelt</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -3106,26 +3116,28 @@ Split Vertically…</string>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.81599999999999995</real>
+				<real>0.83899999999999997</real>
 				<key>Green Component</key>
-				<real>0.81499999999999995</real>
+				<real>0.83899999999999997</real>
 				<key>Red Component</key>
-				<real>0.751</real>
+				<real>0.83899999999999997</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.27000000000000002</real>
+				<real>0.109</real>
 				<key>Green Component</key>
-				<real>0.223</real>
+				<real>0.109</real>
 				<key>Red Component</key>
-				<real>0.088200000000000001</real>
+				<real>0.109</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
+			<false/>
+			<key>Smart Cursor Color</key>
 			<false/>
 			<key>Sync Title</key>
 			<false/>
@@ -3152,11 +3164,11 @@ Split Vertically…</string>
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>1.2</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/denisdavydenko</string>
 		</dict>
@@ -3758,23 +3770,27 @@ Split Vertically…</string>
 	<array>
 		<string>3.3.9</string>
 	</array>
+	<key>NoSyncBFPFavorites</key>
+	<array>
+		<string>JetBrains Mono</string>
+		<string>Fira Code</string>
+	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Fira Mono for Powerline</string>
-		<string>Monaco</string>
+		<string>JetBrains Mono</string>
 		<string>Fira Code</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1792, 1120}}</string>
+		<string>{{-329, 1120}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{572, 896}</string>
+		<string>{33, 1943}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>8AA08C62-FA91-46D3-9A86-DCE23ED2921A</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>47</integer>
+	<integer>74</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4570,6 +4586,8 @@ Split Vertically…</string>
 	<true/>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>Secure Input</key>
+	<true/>
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -4598,6 +4616,8 @@ Split Vertically…</string>
 	<true/>
 	<key>UseBorder</key>
 	<false/>
+	<key>UseMetal</key>
+	<true/>
 	<key>UseVirtualKeyCodesForDetectingDigits</key>
 	<true/>
 	<key>VisualIndicatorForEsc</key>
@@ -6808,7 +6828,9 @@ Split Vertically…</string>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
+	<key>metalMaximizeThroughput</key>
+	<false/>
 	<key>preferIntegratedGPU</key>
-	<true/>
+	<false/>
 </dict>
 </plist>

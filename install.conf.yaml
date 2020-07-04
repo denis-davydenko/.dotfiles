@@ -15,8 +15,11 @@
     ~/.editorconfig: .editorconfig
     ~/.oh-my-zsh: oh-my-zsh/
     ~/.vimrc: .vimrc
-    ~/.vim/colors/selenized.vim: vim/colors/selenized.vim
+    ~/.vim/colors: vim/colors/
     ~/.vim/coc-settings.json: vim/coc-settings.json
+    ~/.config/init.vim: vim/init.vim
+    ~/.config/nvim/colors: vim/colors/
+    ~/.config/nvim/coc-settings.json: vim/coc-settings.json
     ~/.config/kitty/kitty.conf: kitty/kitty.conf
 
 - shell:
@@ -24,7 +27,6 @@
     - command: sh ./homebrew/install.sh
       stdin: true
       stdout: true
-    - cd fonts && sh install.sh
     - source osx/.macos
 
 - link:

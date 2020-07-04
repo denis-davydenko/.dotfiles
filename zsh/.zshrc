@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR="vim"
+export EDITOR="nvim"
 export TERM_PROGRAM=iTerm.app
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
@@ -18,9 +18,6 @@ ZSH_THEME="spaceship"
 SPACESHIP_DOCKER_SHOW="false"
 SPACESHIP_NODE_SHOW="false"
 SPACESHIP_PACKAGE_SHOW="false"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
