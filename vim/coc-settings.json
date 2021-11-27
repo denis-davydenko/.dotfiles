@@ -11,10 +11,12 @@
   "explorer.width": 40,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
-  "explorer.icon.enableVimDevicons": false,
   "explorer.keyMappings": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
   },
-  "javascript.validate.enable": false
+  "javascript.validate.enable": false,
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.lintTask.options": [".", "--ext", ".ts,.tsx"]
 }

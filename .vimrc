@@ -102,15 +102,16 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'amiralies/coc-flow', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tslint-plugin', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
 
 " finalize vim-plug.
 call plug#end()
 " }}}
 
-set background=dark
+set background=light
 colorscheme selenized_bw
 
 " MAPPINGS
@@ -142,7 +143,7 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " lightline {{{
 let g:lightline = {
-  \ 'colorscheme': 'selenized_black',
+  \ 'colorscheme': 'selenized_white',
   \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ]
@@ -201,6 +202,7 @@ let g:fzf_commits_log_options = '--graph --color=always
   \ --format="%C(yellow)%h%C(red)%d%C(reset)
   \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
 
+
 " using ripgrep to update search on type
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
@@ -210,6 +212,18 @@ function! RipgrepFzf(query, fullscreen)
   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
 
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 nnoremap <silent> <leader>p :Files<CR>
@@ -217,7 +231,7 @@ nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>g :GFiles?<CR>
 nnoremap <silent> <leader>c :Commits<CR>
 nnoremap <silent> <leader>bc :BCommits<CR>
-nnoremap <leader>f :RG<Space>
+nnoremap <leader>f :Rg<Space>
 nnoremap <silent> <leader>m :FZFMru<CR>
 
 " display fzf in floating popup window
