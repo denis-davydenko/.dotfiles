@@ -6,7 +6,8 @@
 
 - create:
     - ~/.config
-    - ~/vim/colors
+    - ~/.config/kitty
+    - ~/.config/nvim
 
 - link:
     ~/.gitconfig: git/gitconfig
