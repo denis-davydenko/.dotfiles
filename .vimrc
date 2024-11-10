@@ -192,9 +192,9 @@ let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
 " }}}
 
 " vim-fugitive {{{
-nnoremap <silent> <Leader>B :Gblame<CR>
-nnoremap <silent> <Leader>C :Gclog %<CR>
-nnoremap <silent> <Leader>G :Gstatus<CR>
+nnoremap <silent> <Leader>B :G blame<CR>
+nnoremap <silent> <Leader>C :G log %<CR>
+nnoremap <silent> <Leader>G :G status<CR>
 " }}}
 
 " fzf {{{
@@ -205,7 +205,7 @@ let g:fzf_commits_log_options = '--graph --color=always
 
 " using ripgrep to update search on type
 function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case --hidden -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
   let reload_command = printf(command_fmt, '{q}')
   let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
