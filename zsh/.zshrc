@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
-export TERM_PROGRAM=iTerm.app
+export TERM_PROGRAM=Warp.app
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
 # Would you like to use another custom folder than $ZSH/custom?
@@ -29,7 +29,7 @@ plugins=(
   colorize
   dotenv
   git
-  osx
+  macos
   sublime
   zsh-syntax-highlighting
   zsh-autosuggestions
@@ -49,8 +49,8 @@ alias cat="bat"
 export BAT_THEME="Solarized (light)"
 
 # exa
-alias ls="exa"
-alias lsa="exa -lahF"
+alias ls="eza"
+alias lsa="eza -lahF"
 
 # fzf
 source ~/.dotfiles/zsh/fzf.sh

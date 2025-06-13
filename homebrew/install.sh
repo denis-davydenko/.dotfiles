@@ -12,12 +12,10 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
-brew tap homebrew/cask-fonts
 brew tap homebrew/bundle
 
 brew bundle --file=homebrew/Brewfile
 
 brew link node
-brew install yarn
 
 exit 0

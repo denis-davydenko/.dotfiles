@@ -28,6 +28,7 @@
     - command: sh ./homebrew/install.sh
       stdin: true
       stdout: true
+    - [./osx/.macos]
 
 - link:
     ~/.dotfiles/zsh/themes/spaceship.zsh-theme: zsh/themes/spaceship-prompt/spaceship.zsh-theme

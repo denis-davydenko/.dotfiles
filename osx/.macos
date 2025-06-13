@@ -65,7 +65,9 @@ defaults write com.apple.dock orientation left
 ###############################################################################
 # Touchbar
 ###############################################################################
-
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write com.apple.AppleMultitouchMouse MouseVerticalScroll -bool true
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2
 defaults write com.apple.AppleMultitouchTrackpad TrackpadRotate -int 1
@@ -97,3 +99,6 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder "~/.dotfiles/iterm"
 ###############################################################################
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
