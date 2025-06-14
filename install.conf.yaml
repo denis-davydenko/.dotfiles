@@ -21,14 +21,22 @@
     ~/.config/init.vim: vim/init.vim
     ~/.config/nvim/colors: vim/colors/
     ~/.config/nvim/coc-settings.json: vim/coc-settings.json
-    ~/.config/kitty/kitty.conf: kitty/kitty.conf
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
-    - command: sh ./homebrew/install.sh
+    - ["git submodule update --init --recursive", "Installing submodules"]
+
+    - command: "./homebrew/install.sh -v"
+      description: "Run Homebrew bootstrap"
+      stdin: true # propagate sudo prompts
+      stdout: true # show full output
+      stderr: true
+
+    - command: "./osx/.macos" # she-bang will pick /usr/bin/env bash
+      description: "Apply macOS defaults"
+      if: '[ "$(uname)" = "Darwin" ]' # POSIX-portable test
       stdin: true
       stdout: true
-    - [./osx/.macos]
+        stderr: true
 
 - link:
     ~/.dotfiles/zsh/themes/spaceship.zsh-theme: zsh/themes/spaceship-prompt/spaceship.zsh-theme

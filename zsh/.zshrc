@@ -1,15 +1,18 @@
-# Path to your oh-my-zsh installation.
+# Path to your oh-my-zsh installation
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
 export TERM_PROGRAM=Warp.app
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
-# Would you like to use another custom folder than $ZSH/custom?
+# Custom folder for zsh
 ZSH_CUSTOM=$HOME/.dotfiles/zsh
 
 # vim
 export MYVIMRC="$HOME/.dotfiles/.vimrc"
 export VIMINIT="source $MYVIMRC"
+
+# Configure Homebrew PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
@@ -38,17 +41,16 @@ plugins=(
   fzf-tab
  )
 
-
 source $ZSH/oh-my-zsh.sh
 
 # autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 # bat
 alias cat="bat"
 export BAT_THEME="Solarized (light)"
 
-# exa
+# exa / eza
 alias ls="eza"
 alias lsa="eza -lahF"
 

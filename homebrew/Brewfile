@@ -1,10 +1,6 @@
 cask_args appdir: '/Applications'
 
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/core"
-
+# CLI Tools
 brew "autojump"
 brew "bat"
 brew "coreutils"
@@ -15,11 +11,11 @@ brew "findutils"
 brew "fzf"
 brew "git"
 brew "git-lfs"
+brew "gh"
 brew "grep"
-brew "hub"
 brew "neovim"
 brew "node"
-brew "nvm"
+brew "fnm"
 brew "ripgrep"
 brew "telnet"
 brew "tldr"
@@ -27,11 +23,14 @@ brew "tmux"
 brew "tree"
 brew "vifm"
 brew "yarn"
-cask "firefox"
+
+# Fonts
 cask "font-fira-code"
 cask "font-hack-nerd-font"
 cask "font-jetbrains-mono"
-cask "karabiner-elements"
+
+# Applications
+cask "firefox"
 cask "rectangle"
 cask "sublime-merge"
 cask "sublime-text"
@@ -45,7 +44,10 @@ cask "bitwarden"
 cask "warp"
 cask "iina"
 cask "monitorcontrol"
-# cask "amneziavpn"
-# cask "transmission"
-# cask "google-drive"
-# cask "readdle-spark"
+cask "amneziavpn"
+cask "transmission"
+cask "google-drive"
+cask "readdle-spark"
+
+# Note: karabiner-elements may require manual installation if brew fails
+cask "karabiner-elements"

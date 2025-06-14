@@ -69,14 +69,30 @@ set wildmode=full " complete the next full match
 " PLUGINS {{{
 
 " automatically install vim-plug and run PlugInstall if vim-plug is not found.
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" Updated to support both Vim and Neovim with proper directory paths
+if has('nvim')
+    let plug_autoload_dir = stdpath('config') . '/autoload'
+    let plug_file = plug_autoload_dir . '/plug.vim'
+    let plug_install_dir = stdpath('config') . '/plugged'
+else
+    let plug_autoload_dir = expand('~/.vim/autoload')
+    let plug_file = plug_autoload_dir . '/plug.vim'
+    let plug_install_dir = expand('~/.vim/plugged')
+endif
+
+if empty(glob(plug_file))
+    echo "Installing vim-plug..."
+    if has('nvim')
+        call system('curl -fLo ' . shellescape(plug_file) . ' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+    else
+        call system('curl -fLo ' . shellescape(plug_file) . ' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+    endif
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" initialize vim-plug.
-call plug#begin('~/.vim/plugged')
+" initialize vim-plug with the appropriate directory
+call plug#begin(plug_install_dir)
+
 
 Plug 'arcticicestudio/nord-vim' " color scheme
 Plug 'nelstrom/vim-visual-star-search'

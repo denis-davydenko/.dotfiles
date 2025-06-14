@@ -73,28 +73,6 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -
 defaults write com.apple.AppleMultitouchTrackpad TrackpadRotate -int 1
 
 ###############################################################################
-# Safari & WebKit                                                             #
-###############################################################################
-
-# Enable the Develop menu and the Web Inspector in Safari
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
-
-# Add a context menu item for showing the Web Inspector in web views
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
-
-###############################################################################
-# Terminal & iTerm 2                                                          #
-###############################################################################
-
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder 1
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder "~/.dotfiles/iterm"
-
-###############################################################################
 # Photos                                                                      #
 ###############################################################################
 # Prevent Photos from opening automatically when devices are plugged in
