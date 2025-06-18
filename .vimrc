@@ -93,8 +93,8 @@ endif
 " initialize vim-plug with the appropriate directory
 call plug#begin(plug_install_dir)
 
-
 Plug 'arcticicestudio/nord-vim' " color scheme
+Plug 'p00f/alabaster.nvim' " color scheme
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive' " git support
@@ -128,7 +128,7 @@ call plug#end()
 " }}}
 
 set background=light
-colorscheme selenized_bw
+colorscheme alabaster
 
 " MAPPINGS
 " move blocks in visual mode
