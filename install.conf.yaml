@@ -6,8 +6,8 @@
 
 - create:
     - ~/.config
-    - ~/.config/kitty
     - ~/.config/nvim
+    - ~/.config/ghostty
 
 - link:
     ~/.gitconfig: git/gitconfig
@@ -21,6 +21,7 @@
     ~/.config/init.vim: vim/init.vim
     ~/.config/nvim/colors: vim/colors/
     ~/.config/nvim/coc-settings.json: vim/coc-settings.json
+    ~/.config/ghossty: ghostty
 
 - shell:
     - ["git submodule update --init --recursive", "Installing submodules"]
